@@ -5,89 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
     </style>
 </head>
 <body>
-<label for="totalmarksofphy">toal marks of phy</label>
-<input type="number" id="totalmarksofphy" placeholder="entertotalmarks"><br><br>
-<label for="obtainedmarksofphy">obtained marks of phy</label>
-<input type="number" id="obtainedmarksofphy" placeholder="entertotalmarks"><br><br>
+<label for="totalmarksofphy">Total marks of Physics</label>
+<input type="number" id="totalmarksofphy" placeholder="Enter total marks"><br><br>
+<label for="obtainedmarksofphy">Obtained marks of Physics</label>
+<input type="number" id="obtainedmarksofphy" placeholder="Enter obtained marks"><br><br>
 
-<label for="toalmarksofmath">toal marks of math</label>
-<input type="number" id="totalmarksofmath" placeholder="entertotalmarks"><br><br>
-<label for="obtainedmarksofmath">obtained marks of math</label>
-<input type="number" id="obtainedmarksofmath" placeholder="entertotalmarks"><br><br>
+<label for="totalmarksofmath">Total marks of Math</label>
+<input type="number" id="totalmarksofmath" placeholder="Enter total marks"><br><br>
+<label for="obtainedmarksofmath">Obtained marks of Math</label>
+<input type="number" id="obtainedmarksofmath" placeholder="Enter obtained marks"><br><br>
 
-<label for="totalmarksofbio1">toal marks of bio</label>
-<input type="number" id="totalmarksofbio1" placeholder="entertotalmarks"><br><br>
-<label for="obtainedmarksofbio1">obtained marks of bio</label>
-<input type="number" id="obtainedmarksofbio1" placeholder="entertotalmarks"><br><br>
+<label for="totalmarksofbio">Total marks of Biology</label>
+<input type="number" id="totalmarksofbio" placeholder="Enter total marks"><br><br>
+<label for="obtainedmarksofbio">Obtained marks of Biology</label>
+<input type="number" id="obtainedmarksofbio" placeholder="Enter obtained marks"><br><br>
 
-<label for="totalmarksofenglish">toal marks of english</label>
-<input type="number" id="totalmarksofenglish" placeholder="entertotalmarks"><br><br>
-<label for="obtainedmarksofenglish">obtained marks of english</label>
-<input type="number" id="obtainedmarksofenglish" placeholder="entertotalmarks"><br><br>
+<label for="totalmarksofenglish">Total marks of English</label>
+<input type="number" id="totalmarksofenglish" placeholder="Enter total marks"><br><br>
+<label for="obtainedmarksofenglish">Obtained marks of English</label>
+<input type="number" id="obtainedmarksofenglish" placeholder="Enter obtained marks"><br><br>
 
-<button onclick="result()">result </button>
-
+<button onclick="result()">Calculate Result</button>
 
 <div class="resulttable">
-    <table>
+    <table border="1">
         <tr>
             <th>Subject</th>
-            <th>total marks</th>
-            <th>obtained marks</th>
+            <th>Total Marks</th>
+            <th>Obtained Marks</th>
+            <th>Percentage</th>
         </tr>
         <tr>
             <td>Biology</td>
-            <td id="totalmarksofbio"></td>
-            <td id="obtainedmarksofbio"></td>
+            <td id="bioTotal"></td>
+            <td id="bioObtained"></td>
+            <td id="bioPercentage"></td>
         </tr>
         <tr>
             <td>Physics</td>
-            <td id="totalmarksofphy"></td>
-            <td id="obtainedmarksofphy"></td>
+            <td id="phyTotal"></td>
+            <td id="phyObtained"></td>
+            <td id="phyPercentage"></td>
         </tr>
         <tr>
             <td>Math</td>
-            <td id="totalmarksofmath"></td>
-            <td id="obtainedmarksofmath"></td>
+            <td id="mathTotal"></td>
+            <td id="mathObtained"></td>
+            <td id="mathPercentage"></td>
         </tr>
         <tr>
             <td>English</td>
-            <td id="totalmarksofenglish"></td>
-            <td id="obtainedmarksofenglish"></td>
+            <td id="engTotal"></td>
+            <td id="engObtained"></td>
+            <td id="engPercentage"></td>
         </tr>
-
+        <tr>
+            <td><strong>Total Percentage</strong></td>
+            <td colspan="2"></td>
+            <td id="totalPercentage"></td>
+        </tr>
     </table>
 </div>
 
 <script>
-            function result() {
-            // Get the values from input fields
-            var totalMarksPhy = document.getElementById("totalmarksofphy").value;
-            var obtainedMarksPhy = document.getElementById("obtainedmarksofphy").value;
-            var totalMarksMath = document.getElementById("totalmarksofmath").value;
-            var obtainedMarksMath = document.getElementById("obtainedmarksofmath").value;
-            var totalMarksBio = document.getElementById("totalmarksofbio").value;
-            var obtainedMarksBio = document.getElementById("obtainedmarksofbio").value;
-            var totalMarksEng = document.getElementById("totalmarksofenglish").value;
-            var obtainedMarksEng = document.getElementById("obtainedmarksofenglish").value;
+function result() {
+    let totalMarksPhy = parseFloat(document.getElementById("totalmarksofphy").value);
+    let obtainedMarksPhy = parseFloat(document.getElementById("obtainedmarksofphy").value);
+    let totalMarksMath = parseFloat(document.getElementById("totalmarksofmath").value);
+    let obtainedMarksMath = parseFloat(document.getElementById("obtainedmarksofmath").value);
+    let totalMarksBio = parseFloat(document.getElementById("totalmarksofbio").value);
+    let obtainedMarksBio = parseFloat(document.getElementById("obtainedmarksofbio").value);
+    let totalMarksEng = parseFloat(document.getElementById("totalmarksofenglish").value);
+    let obtainedMarksEng = parseFloat(document.getElementById("obtainedmarksofenglish").value);
 
-            // Display the values in the result table
-            document.getElementById("bioTotal").innerText = totalMarksBio;
-            document.getElementById("bioObtained").innerText = obtainedMarksBio;
+    document.getElementById("bioTotal").innerText = totalMarksBio;
+    document.getElementById("bioObtained").innerText = obtainedMarksBio;
 
-            document.getElementById("phyTotal").innerText = totalMarksPhy;
-            document.getElementById("phyObtained").innerText = obtainedMarksPhy;
+    document.getElementById("phyTotal").innerText = totalMarksPhy;
+    document.getElementById("phyObtained").innerText = obtainedMarksPhy;
 
-            document.getElementById("mathTotal").innerText = totalMarksMath;
-            document.getElementById("mathObtained").innerText = obtainedMarksMath;
+    document.getElementById("mathTotal").innerText = totalMarksMath;
+    document.getElementById("mathObtained").innerText = obtainedMarksMath;
 
-            document.getElementById("engTotal").innerText = totalMarksEng;
-            document.getElementById("engObtained").innerText = obtainedMarksEng;
-        }
+    document.getElementById("engTotal").innerText = totalMarksEng;
+    document.getElementById("engObtained").innerText = obtainedMarksEng;
+
+    let bioPercentage = (obtainedMarksBio / totalMarksBio) * 100;
+    let phyPercentage = (obtainedMarksPhy / totalMarksPhy) * 100;
+    let mathPercentage = (obtainedMarksMath / totalMarksMath) * 100;
+    let engPercentage = (obtainedMarksEng / totalMarksEng) * 100;
+
+    document.getElementById("bioPercentage").innerText = bioPercentage.toFixed(2) + "%";
+    document.getElementById("phyPercentage").innerText = phyPercentage.toFixed(2) + "%";
+    document.getElementById("mathPercentage").innerText = mathPercentage.toFixed(2) + "%";
+    document.getElementById("engPercentage").innerText = engPercentage.toFixed(2) + "%";
+
+    let totalMarks = totalMarksPhy + totalMarksMath + totalMarksBio + totalMarksEng;
+    let totalObtainedMarks = obtainedMarksPhy + obtainedMarksMath + obtainedMarksBio + obtainedMarksEng;
+    let overallPercentage = (totalObtainedMarks / totalMarks) * 100;
+
+    document.getElementById("totalPercentage").innerText = overallPercentage.toFixed(2) + "%";
+}
 </script>
 </body>
 </html>
