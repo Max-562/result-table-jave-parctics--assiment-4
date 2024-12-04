@@ -63,7 +63,31 @@
     </table>
 </div>
 
-<script>   
+<script>
+            function result() {
+            // Get the values from input fields
+            var totalMarksPhy = document.getElementById("totalmarksofphy").value;
+            var obtainedMarksPhy = document.getElementById("obtainedmarksofphy").value;
+            var totalMarksMath = document.getElementById("totalmarksofmath").value;
+            var obtainedMarksMath = document.getElementById("obtainedmarksofmath").value;
+            var totalMarksBio = document.getElementById("totalmarksofbio").value;
+            var obtainedMarksBio = document.getElementById("obtainedmarksofbio").value;
+            var totalMarksEng = document.getElementById("totalmarksofenglish").value;
+            var obtainedMarksEng = document.getElementById("obtainedmarksofenglish").value;
+
+            // Display the values in the result table
+            document.getElementById("bioTotal").innerText = totalMarksBio;
+            document.getElementById("bioObtained").innerText = obtainedMarksBio;
+
+            document.getElementById("phyTotal").innerText = totalMarksPhy;
+            document.getElementById("phyObtained").innerText = obtainedMarksPhy;
+
+            document.getElementById("mathTotal").innerText = totalMarksMath;
+            document.getElementById("mathObtained").innerText = obtainedMarksMath;
+
+            document.getElementById("engTotal").innerText = totalMarksEng;
+            document.getElementById("engObtained").innerText = obtainedMarksEng;
+        }
 </script>
 </body>
 </html>
